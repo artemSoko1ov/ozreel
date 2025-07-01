@@ -1,0 +1,93 @@
+@font-face {
+    font-family: 'Inter';
+    src: url(../fonts/Inter-Regular.otf);
+}
+
+@font-face {
+    font-family: 'ReemKufiFun';
+    src: url(../fonts/ReemKufiFun-Regular.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter';
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+main {
+    flex: 1;
+}
+
+header,
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 150px;
+    min-height: 100px;
+    background-color: black;
+    color: white;
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header__logo-title {
+    font-family: 'ReemKufiFun';
+    font-size: 1.5rem;
+}
+
+.header__nav {
+    width: 100%;
+    margin: 0 0 0 5%;
+}
+
+.header__nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+}
+
+.header__nav-item {
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.header__button {
+    background-color: #A62944;
+    font-size: 1rem;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 15px 25px;
+    border-radius: 10px;
+}
+
+.footer__container {
+    width: 100%;
+    padding: 0 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__text--red {
+    color: #A62944;
+}
