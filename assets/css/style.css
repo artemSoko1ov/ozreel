@@ -24,10 +24,12 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100%;
+    background-image: url(../img/bg-body.png);
 }
 
 main {
     flex: 1;
+    padding: 0 150px;
 }
 
 header,
@@ -79,6 +81,13 @@ footer {
     text-transform: uppercase;
     padding: 15px 25px;
     border-radius: 10px;
+}
+
+.about, .about__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .footer__container {
