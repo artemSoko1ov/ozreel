@@ -1,18 +1,44 @@
-const container = document.querySelector('.slider__container');
+const cards = document.querySelectorAll(".card");
+let currentIndex = 0;
+let isAnimating = false;
 
-function updateClassLeft(){
+function updateCarousel(newIndex) {
+    if (isAnimating) return;
+    isAnimating = true;
+    currentIndex = (newIndex + cards.length) % cards.length;
+    cards.forEach((card, i) => {
+        const offset = (i - currentIndex + cards.length) % cards.length;
 
+        card.classList.remove(
+            "center",
+            "left-1",
+            "left-2",
+            "right-1",
+            "right-2"
+        );
+
+        if (offset === 0) {
+            card.classList.add("center");
+        } else if (offset === 1) {
+            card.classList.add("right-1");
+        } else if (offset === 2) {
+            card.classList.add("right-2");
+        } else if (offset === 3) {
+            card.classList.add("left-2");
+        } else if (offset === 4) {
+            card.classList.add("left-1");
+        }
+
+    });
+
+    setTimeout(() => {
+        isAnimating = false;
+    }, 800);
 }
 
-function updateClassRight(){
-    
-}
-
-container.addEventListener('click', (e) => {
-    if(e.target.classList.contains('.card-one') || e.target.classList.contains('.card-two')){
-        updateClassLeft();
-    }
-    else if(e.target.classList.contains('.card-four') || e.target.classList.contains('.card-five')){
-        updateClassRight();
-    }
+cards.forEach((card, i) => {
+    card.addEventListener("click", (e) => {
+        updateCarousel(i);
+    });
 });
+updateCarousel(0);
