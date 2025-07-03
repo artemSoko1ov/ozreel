@@ -1,4 +1,4 @@
-const cards = document.querySelectorAll(".card");
+const cards = document.querySelectorAll(".carousel__card");
 let currentIndex = 0;
 let isAnimating = false;
 
